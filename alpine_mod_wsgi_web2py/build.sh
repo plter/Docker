@@ -1,0 +1,1 @@
+docker build -t xtiqin/alpine_mod_wsgi_web2py .
