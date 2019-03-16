@@ -1,4 +1,7 @@
-FROM python:3.7.2-slim
+FROM pypy:3
+
+RUN mv /etc/apt/sources.list /etc/apt/sources.list.bak
+COPY sources.list /etc/apt/
 
 WORKDIR /opt/
 
@@ -10,4 +13,4 @@ RUN apt-get update \
 
 WORKDIR /opt/web2py
 
-CMD [ "python" , "web2py.py" , "-a" , "yunp.top" , "-i" , "0.0.0.0" ]
+CMD [ "pypy3" , "web2py.py" , "-a" , "yunp.top" , "-i" , "0.0.0.0" ]
