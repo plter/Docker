@@ -17,4 +17,7 @@ COPY init_db.sh /opt/
 COPY autoboot.sh /opt/
 RUN chmod +x /opt/autoboot.sh
 
+RUN mv /opt/lampp/etc/extra/httpd-xampp.conf /opt/lampp/etc/extra/httpd-xampp.conf.bak
+COPY httpd-xampp.conf /opt/lampp/etc/extra/
+
 CMD [ "/bin/bash" , "/opt/autoboot.sh" ]

@@ -1,0 +1,1 @@
+docker build -t xtiqin/web2py:2.17.2 .
